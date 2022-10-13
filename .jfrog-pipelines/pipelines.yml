@@ -56,9 +56,9 @@ pipelines:
         stepMode: Bash
         configuration:
           environmentVariables:
-            timeoutSeconds: 21600
-            SKIP_GLOBAL_TEARDOWN: 'true'
-            SKIP_SETUP: 'true'
+            - timeoutSeconds: 21600
+            - SKIP_GLOBAL_TEARDOWN: 'true'
+            - SKIP_SETUP: 'true'
           inputSteps:
             - name: setup
         stepletMultipliers:

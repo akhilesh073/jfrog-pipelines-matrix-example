@@ -1,14 +1,14 @@
-template: true   # required for local templates
+template: true # required for local templates
 valuesFilePath: ./values.yml
 
 resources:
   - name: matrix_repo
     type: GitRepo
     configuration:
-      path: {{ .Values.repoPath }}      # Change to your own path
+      path: { { .Values.repoPath } } # Change to your own path
       branches:
         include: ^master$
-      gitProvider: {{ .Values.gitProvider }}        # Change to your own GitHub integration name
+      gitProvider: { { .Values.gitProvider } } # Change to your own GitHub integration name
 
 pipelines:
   - name: matrix_single_dimension_pipeline
@@ -20,15 +20,15 @@ pipelines:
           inputResources:
             - name: matrix_repo
         stepletMultipliers:
-          environmentVariables:             # Sets of environment variables for steplets
-            - animal:    dog                # - Set 1
-              mineral:   copper
+          environmentVariables: # Sets of environment variables for steplets
+            - animal: dog # - Set 1
+              mineral: copper
               vegetable: carrot
-            - animal:    goat               # - Set 2
-              mineral:   iron
+            - animal: goat # - Set 2
+              mineral: iron
               vegetable: broccoli
-            - animal:    lizard             # - Set 3
-              mineral:   lead
+            - animal: lizard # - Set 3
+              mineral: lead
 
         execution:
           onExecute:
@@ -55,6 +55,10 @@ pipelines:
         type: Matrix
         stepMode: Bash
         configuration:
+          environmentVariables:
+            timeoutSeconds: 21600
+            SKIP_GLOBAL_TEARDOWN: 'true'
+            SKIP_SETUP: 'true'
           inputSteps:
             - name: setup
         stepletMultipliers:

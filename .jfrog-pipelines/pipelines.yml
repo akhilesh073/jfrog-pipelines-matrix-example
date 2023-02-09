@@ -1,15 +1,11 @@
-template: true # required for local templates
-valuesFilePath: ./values.yml
-
 resources:
   - name: matrix_repo
     type: GitRepo
     configuration:
-      path: { { .Values.repoPath } } # Change to your own path
+      path: akhilesh073/jfrog-pipelines-matrix-example
       branches:
         include: ^master$
-      gitProvider: { { .Values.gitProvider } } # Change to your own GitHub integration name
-
+      gitProvider: testInt
 pipelines:
   - name: matrix_single_dimension_pipeline
     steps:
@@ -55,10 +51,6 @@ pipelines:
         type: Matrix
         stepMode: Bash
         configuration:
-          environmentVariables:
-            - timeoutSeconds: 21600
-            - SKIP_GLOBAL_TEARDOWN: 'true'
-            - SKIP_SETUP: 'true'
           inputSteps:
             - name: setup
         stepletMultipliers:

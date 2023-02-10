@@ -1,16 +1,16 @@
 pipelines:
   - name: matrix_example
-steps:
-  - name: step_1_matrix_example
-    type: Matrix
-    stepMode: Bash
-    configuration:
-      multiNode: true
-    stepletMultipliers:
-      nodePools:
-        - windows
-        - ubuntu_18
-        - ubuntu_16
-      environmentVariables:
-        - foo: foo
-        - bar: bar
+  steps:
+    - name: step_1_matrix_example
+      type: Matrix
+      stepMode: Bash
+      configuration:
+        multiNode: true
+      stepletMultipliers:
+        nodePools:
+          - windows
+          - ubuntu_18
+          - ubuntu_16
+        environmentVariables:
+          - foo: foo
+          - bar: bar

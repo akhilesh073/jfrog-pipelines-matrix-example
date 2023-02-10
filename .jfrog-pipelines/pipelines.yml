@@ -8,9 +8,7 @@ pipelines:
           multiNode: true
         stepletMultipliers:
           nodePools:
-            - windows
             - ubuntu_18
-            - ubuntu_16
           environmentVariables:
             - foo: foo
             - bar: bar

@@ -55,6 +55,10 @@ pipelines:
           inputSteps:
             - name: setup
         stepletMultipliers:
+          nodePools:
+            - windows
+            - ubuntu_18
+            - ubuntu_16
           environmentVariables:
             - module: mod_1
             - module: mod_2

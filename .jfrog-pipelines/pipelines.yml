@@ -16,6 +16,7 @@ pipelines:
           inputResources:
             - name: matrix_repo
         stepletMultipliers:
+          nodePool: high_spec_nodes
           environmentVariables: # Sets of environment variables for steplets
             - animal: dog # - Set 1
               mineral: copper

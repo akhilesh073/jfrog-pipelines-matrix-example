@@ -14,3 +14,6 @@ pipelines:
           environmentVariables:
             - foo: foo
             - bar: bar
+        execution:
+          onExecute:
+            - echo "Executing matrix step on ${steplet_id}"

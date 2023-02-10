@@ -52,6 +52,7 @@ pipelines:
         type: Matrix
         stepMode: Bash
         configuration:
+          multiNode: true
           inputSteps:
             - name: setup
         stepletMultipliers:

@@ -1,5 +1,5 @@
 pipelines:
-  - name: matrix_single_dimension_pipeline
+  - name: matrix_single_dimension_pipeline1
     steps:
       - name: step_1_matrix_example
         type: Matrix

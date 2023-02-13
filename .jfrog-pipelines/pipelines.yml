@@ -11,8 +11,9 @@ pipelines:
             - default-dynamic-nodepool
             - akhilwindows
           environmentVariables:
-            - foo: foo
-            - bar: bar
+            - env-var1: sample1
+            - env-var2: sample2
+            - env-var3: sample3
               runtimes:
                 - type: image
                   image:
